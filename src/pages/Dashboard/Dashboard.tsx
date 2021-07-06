@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 // Api
 import api from '../../services/api';
 
+// Components
+import RepoList from './components/RepoList';
+
 // Interfaces
-interface RepoProps {
+interface OwnerProps {
+  avatar_url: string;
+}
+
+export interface RepoProps {
   id: string;
   name: string;
+  owner: OwnerProps;
+  description: string;
+  full_name: string;
+  stargazers_count: number;
+  forks_count: number;
+  open_issues: number;
 }
 
 const Dashboard: React.FC = () => {
@@ -29,14 +41,10 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <div>Repositorios</div>
+      <h1>Repositórios</h1>
       <ul>
         {repos.length &&
-          repos.map((repo: RepoProps) => (
-            <Link to={`/details/${repo.name}`}>
-              <li key={repo.id}>{repo.name}</li>
-            </Link>
-          ))}
+          repos.map((repo: RepoProps) => <RepoList repo={repo} />)}
       </ul>
     </>
   );
