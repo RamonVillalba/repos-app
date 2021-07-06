@@ -4,11 +4,10 @@ import { Route } from 'react-router-dom';
 // Components
 import DefaultLayout from '../pages/_layouts/Default';
 
-// Interfaces
 interface RouterWrapperProps {
-  component: React.FC;
+  component: React.FC<any>;
   path: string;
-  exact: boolean;
+  exact?: boolean;
 }
 
 const RouterWrapper: React.FC<RouterWrapperProps> = ({
