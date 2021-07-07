@@ -31,7 +31,7 @@ const Details: React.FC<RouteComponentProps<RouteParams>> = ({ match }) => {
 
         setRepo(data);
       } catch (error) {
-        console.log('Não foi possível carregar os detalhes do respositório');
+        // 'Não foi possível carregar os detalhes do respositório'
       }
     };
 
@@ -47,7 +47,7 @@ const Details: React.FC<RouteComponentProps<RouteParams>> = ({ match }) => {
 
         setIssues(data);
       } catch (error) {
-        console.log('Não foi possível carregar as issues');
+        // Não foi possível carregar as issues
       }
     };
 

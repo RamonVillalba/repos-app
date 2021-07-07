@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
 
         setRepos(data);
       } catch (error) {
-        console.log('Não foi possível carregar as informações');
+        // Não foi possível carregar as informações
       }
     };
 
